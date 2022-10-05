@@ -11,16 +11,16 @@ spec:
       targetPort: web
       protocol: TCP
       name: web2
-      nodePort: {{ .Values.web.node.port }}
+      #nodePort: {{ .Values.web.node.port }}
     - port: {{ .Values.service.port }} 
       targetPort: http
       protocol: TCP
       name: http2
-      nodePort: {{ .Values.service.node.port }}
+      #nodePort: {{ .Values.service.node.port }}
     - port: {{ .Values.udp.port  }}
       targetPort: udp
       name: udp2
       protocol: UDP
-      nodePort: {{ .Values.udp.node.port }}   
+      #nodePort: {{ .Values.udp.node.port }}   
   selector:
     {{- include "scouterapm.selectorLabels" . | nindent 4 }}
