@@ -30,7 +30,7 @@ podAnnotations: {}
 
 podSecurityContext: {}
 
-podLabels: { "platform":"platform_container", "taskse":"operation_mgmt", "taskcl": "monitoring_mgmt" }
+podLabels: { "platform":"demand_service", "taskse":"demand_devops", "taskcl": "demand_scouter" }
   # fsGroup: 2000
 
 securityContext: {}
