@@ -1,20 +1,20 @@
 credential:
   - name: HOST
-    value: {{ include "scouterapm.primary.fullname" . }}.{{ .Release.Namespace }}.svc.{{ .Values.clusterDomain }}
+    value: {{ include "scouterapm.fullname" . }}.{{ .Release.Namespace }}.svc.{{ .Values.clusterDomain }}
   - name: PORT
     valueFrom:
       serviceRef:
-        name: {{ include "scouterapm.primary.fullname" . }}
+        name: {{ include "scouterapm.fullname" . }}
         jsonpath: '{ .spec.ports[?(@.name=="scouterapm")].port }'
-{{- if (eq .Values.primary.service.type "NodePort") }}
+{{- if (eq .Values.service.type "NodePort") }}
   - name: NODE_PORT
     valueFrom:
       serviceRef:
-        name: {{ include "scouterapm.primary.fullname" . }}
+        name: {{ include "scouterapm.fullname" . }}
         jsonpath: '{ .spec.ports[?(@.name=="scouterapm")].nodePort }'
 {{- end }}
   - name: CLUSTER_IP
     valueFrom:
       serviceRef:
-        name: {{ include "scouterapm.primary.fullname" . }}
+        name: {{ include "scouterapm.fullname" . }}
         jsonpath: '{ .spec.clusterIP }'
