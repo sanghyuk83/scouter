@@ -53,7 +53,7 @@ web:
 
 
 udp:
-  port: 6101
+  port: 6100
   node:
     port: 30286
 

@@ -62,7 +62,7 @@ spec:
               containerPort: 6100
               protocol: TCP
             - name: udp
-              containerPort: 6101
+              containerPort: 6100
               protocol: UDP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
