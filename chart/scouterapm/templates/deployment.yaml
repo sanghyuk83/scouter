@@ -47,8 +47,8 @@ spec:
               value: '5'
             - name: MGR_PURGE_COUNTER_KEEP_DAYS
               value: '15'
-              #- name: JAVA_OPT
-              #value: '-Xms1024m -Xmx1024m'
+            - name: JAVA_OPT
+              value: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1'
             - name: DB_DIR
               value: '/home/scouter-server/database'
             - name: LOG_DIR
